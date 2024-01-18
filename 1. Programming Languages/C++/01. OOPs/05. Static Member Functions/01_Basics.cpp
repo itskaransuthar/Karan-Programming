@@ -45,7 +45,6 @@ public:
 
 int Customer::countCustomer = 0;
 int Customer::totalBalance = 0;
-// Hello Jii
 
 int main()
 {
