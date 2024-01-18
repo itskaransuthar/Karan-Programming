@@ -1,0 +1,19 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp"
+    },
+    "cSpell.words": [
+        "bhai",
+        "Bhaisahab",
+        "Karan",
+        "Radha",
+        "redeclared",
+        "sahab",
+        "Suthar",
+        "वाला"
+    ]
+}
