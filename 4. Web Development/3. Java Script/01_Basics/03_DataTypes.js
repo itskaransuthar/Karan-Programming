@@ -17,15 +17,16 @@ Types of data types:
     1. Primitive Data Types
         number
         bigint
-        string 
+        string  
         boolean
         undefined
-        Nan
         null
         symbol (used for uniqueness)
 
-    2. Non-Primitive Data Types
-        object
+    2. Non-Primitive Data Types / Reference Data Types
+        arrays
+        objects
+        functions
 */
 
 console.log(typeof "Karan")     // string
