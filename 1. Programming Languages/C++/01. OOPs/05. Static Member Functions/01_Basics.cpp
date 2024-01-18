@@ -51,7 +51,6 @@ int main()
     Customer C1("Karan", 1234, 10000);
     Customer C2("Bhavika", 4321, 20000);
     Customer C3("Chintu", 9425, 50000);
-    sfsdf
     cout << endl;
 
     C1.display(); cout << endl;
