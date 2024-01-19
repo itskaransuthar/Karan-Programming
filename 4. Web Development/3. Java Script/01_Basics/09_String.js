@@ -18,6 +18,9 @@ console.log(`Hello my name is ${myName} and my age is ${age}`)
 
 const fatherName = new String("Ghanshyam Suthar")
 
+console.log(typeof myName)      // string
+console.log(typeof fatherName)  // object
+
 console.log(`Hello my name is ${myName} and my father's name is ${fatherName}`)
 // Hello my name is Karan Suthar and my father's name is Ghanshyam Suthar
 
@@ -27,7 +30,7 @@ console.log(fatherName[0])                 // G
 console.log(myName.__proto__)              // {}
 console.log(fatherName.__proto__)          // {}
 
-console.log(myName.lenght)                 // undefined
+console.log(myName.length)                 // 12
 console.log(fatherName.length)             // 16
 
 console.log(myName.toUpperCase())          // KARAN SUTHAR
