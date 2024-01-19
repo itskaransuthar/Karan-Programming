@@ -13,8 +13,8 @@ score = "33abc"
 value = Number(score)
 console.log("score:", score, "and it's type is:", typeof score)
 console.log("value:", value, "and it's type is:", typeof value)
-//* score: 33 and it's type is: string
-//* value: 33 and it's type is: number
+//* score: 33abc and it's type is: string
+//* value: NaN and it's type is: number
 
 score = null
 value = Number(score)

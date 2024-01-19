@@ -71,42 +71,52 @@ public:
         return head;
     }
 
-    //? Delete from given Position
-    Node * deletePositionalNode(Node* head, int position)
+    //? Delete from given Position (Iteration)
+    Node * deleteNode1(Node* head, int position)
     {
+        // If no node is present in linked list
         if(head == NULL)
             return NULL;
         
-        if(position == 1 && head -> next == NULL)
+        // If only node is present in linked list
+        if(position == 1)
         {
-            delete head;
-            head = NULL;
+            Node *temp = head;
+            head = head -> next;
+            delete temp;
 
             return head;
         }
 
+        // More than one node is present in linked list
         Node *curr = head;
         Node *prev = NULL;
 
-        for(int i = 1; i < position; i++)
+        while(--position)
         {
             prev = curr;
             curr = curr -> next;
         }
-
-        if(prev == NULL)
-        {
-            head = head -> next;
-            delete curr;
-            curr = NULL;
-        }
-        else 
-        {
-            prev -> next = curr -> next;
-            delete curr;
-        }
+        
+        prev -> next = curr -> next;
+        delete curr;
 
         return head;
+    }
+
+    //? Delete from given Position (Recursion)
+    Node * deleteNode2(Node* curr, int position)
+    {
+        // Base Condition
+        if(position == 1)
+        {
+            return curr -> next;
+            delete curr;
+        }
+
+        // Recursive Call
+        curr -> next = deleteNode2(curr -> next, position - 1);
+        return curr;
     }
 
     //? Display Linked List
@@ -137,6 +147,6 @@ int main()
     head = head -> deleteLastNode(head);
     head -> displayList(head);
 
-    head = head -> deletePositionalNode(head, 1);
+    head = head -> deleteNode2(head, 1);
     head -> displayList(head);
 }  

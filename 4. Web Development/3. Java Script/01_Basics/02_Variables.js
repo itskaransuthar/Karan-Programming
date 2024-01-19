@@ -19,8 +19,8 @@ console.table([accountId, accoundEmail, accountPassword, accountCity, accountSta
     let lastName = "Suthar"
 }
 
-name = "Karan"
-console.log(name)
+firstName = "Karan"
+console.log(firstName)
 
 // console.log(lastName) //? ReferenceError
 
