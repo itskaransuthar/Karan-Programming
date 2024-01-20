@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java String Functions</title>
+    <style>
+        ol {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+        }
+        b {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Java String Functions</h1>
+    <hr>
+    <h2>length()</h2>
+    <ol>
+        <li>public int length()</li>
+        <li>Returns the length of a specified string</li>
+        <li>Return type is int</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan";
+                System.out.println(str.length()); // <b>5</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>charAt()</h2>
+    <ol>
+        <li>public char charAt(int index)</li>
+        <li>Returns the character at the specified index (position)</li>
+        <li>Return type is char</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan";
+                char ch = str.charAt(0);
+
+                System.out.println(ch);               // <b>K</b>
+                System.out.println(str.charAt(1));    // <b>a</b>
+                System.out.println(str.charAt(2));    // <b>r</b>
+                System.out.println(str.charAt(3));    // <b>a</b>
+                System.out.println(str.charAt(4));    // <b>n</b>
+                // System.out.println(str.charAt(5)); // <b>IndexOutOfBoundsException</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>concat()</h2>
+    <ol>
+        <li>public String concat(String string2)</li>
+        <li>Appends a string to the end of another string</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str1 = "Karan";
+                String str2 = "Suthar";
+
+                String newStr = str1.concat(str2);
+
+                System.out.println(str1);                            // <b>Karan</b>
+                System.out.println(str2);                            // <b>Suthar</b>
+                System.out.println(newStr);                          // <b>KaranSuthar</b>
+                System.out.println(str1.concat(" ").concat(str2));   // <b>Karan Suthar</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>compareTo()</h2>
+    <ol>
+        <li>public int compareTo(String string2) <br>
+            public int compareTo(Object object)</li>
+        <li>Compares two strings lexicographically</li>
+        <li>Return type is int</li>
+        <ul style="list-style-type: square;">
+            <li>= 0 if the string is equal to the other string</li>
+            <li>&lt; 0 if the string is lexicographically less than the other string</li>
+            <li>> 0 if the string is lexicographically greater than the other string (more characters)</li>
+        </ul>
+    </ol>
+    <h2>equals()</h2>
+    <ol>
+        <li>public boolean equals(Object anotherObject)</li>
+        <li>Compares two strings. Returns true if the strings are equal, and false if not</li>
+        <li>Return type is boolean</li>
+        <ul style="list-style-type: square;">
+            <li>true - if the strings are equal</li>
+            <li>false - if the strings are not equal</li>
+        </ul>
+    </ol>
+    <h2>equalsIgnoreCase()</h2>
+    <ol>
+        <li>public boolean equalsIgnoreCase(String anotherString)</li>
+        <li>Compares two strings, ignoring case considerations</li>
+        <li>Return type is boolean</li>
+        <ul style="list-style-type: square;">
+            <li>true - if the strings are equal, ignoring case differences</li>
+            <li>false - if the strings are not equal</li>
+        </ul>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str1 = "Hello", 
+                str2 = "Hello", 
+                str3 = "Hi", 
+                str4 = "Karan", 
+                str5 = "KaraN";      
+
+                int value = str4.compareTo(str5);    
+
+                System.out.println(str1.compareTo(str2));          // <b>0</b>
+                System.out.println(str1.compareTo(str3));          // <b>-4</b>
+                System.out.println(value);                         // <b>32</b>
+                System.out.println(str5.compareTo(str4));          // <b>-32</b>
+                    
+                System.out.println(str1 == str2);                  // <b>true</b>
+                System.out.println(str1 == str3);                  // <b>false</b>
+                System.out.println(str4 == str5);                  // <b>false</b>
+                System.out.println(str5 == str4);                  // <b>false</b>
+                            
+                System.out.println(str1.equals(str2));             // <b>true</b>
+                System.out.println(str1.equals(str3));             // <b>false</b>
+                System.out.println(str4.equals(str5));             // <b>false</b>
+                System.out.println(str5.equals(str4));             // <b>false</b>
+
+                System.out.println(str1.equalsIgnoreCase(str2));   // <b>true</b>
+                System.out.println(str1.equalsIgnoreCase(str3));   // <b>false</b>
+                System.out.println(str4.equalsIgnoreCase(str5));   // <b>true</b>
+                System.out.println(str5.equalsIgnoreCase(str4));   // <b>true</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>compareToIgnoreCase()</h2>
+    <ol>
+        <li>public int compareToIgnoreCase(String string2)</li>
+        <li>Compares two strings lexicographically, ignoring case differences</li>
+        <li>Return type is int</li>
+        <ul style="list-style-type: square;">
+            <li>= 0 if the string is equal to the other string, ignoring case differences</li>
+            <li>&lt; 0 if the string is lexicographically less than the other string</li>
+            <li>> 0 if the string is lexicographically greater than the other string (more characters)</li>
+        </ul>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str1 = "Hello", 
+                str2 = "Hello", 
+                str3 = "Hi", 
+                str4 = "Karan", 
+                str5 = "KaraN";      
+
+                int value = str4.compareTo(str5);    
+
+                System.out.println(str1.compareTo(str2));            // <b>0</b>
+                System.out.println(str1.compareTo(str3));            // <b>-4</b>
+                System.out.println(value);                           // <b>32</b>
+                System.out.println(str5.compareTo(str4));            // <b>-32</b>
+
+                System.out.println(str1.compareToIgnoreCase(str2));  // <b>0</b>
+                System.out.println(str1.compareToIgnoreCase(str3));  // <b>-4</b>
+                System.out.println(str4.compareToIgnoreCase(str5));  // <b>0</b>
+                System.out.println(str5.compareToIgnoreCase(str4));  // <b>0</b>
+
+                System.out.println(str1 == str2);                    // <b>true</b>
+                System.out.println(str1 == str3);                    // <b>false</b>
+                System.out.println(str4 == str5);                    // <b>false</b>
+                System.out.println(str5 == str4);                    // <b>false</b>
+                        
+                System.out.println(str1.equals(str2));               // <b>true</b>
+                System.out.println(str1.equals(str3));               // <b>false</b>
+                System.out.println(str4.equals(str5));               // <b>false</b>
+                System.out.println(str5.equals(str4));               // <b>false</b>
+
+                System.out.println(str1.equalsIgnoreCase(str2));     // <b>true</b>
+                System.out.println(str1.equalsIgnoreCase(str3));     // <b>false</b>
+                System.out.println(str4.equalsIgnoreCase(str5));     // <b>true</b>
+                System.out.println(str5.equalsIgnoreCase(str4));     // <b>true</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>indexOf()</h2>
+    <ol>
+        <li>int indexOf(char ch) <br>
+            int indexOf(String str) <br>
+            int indexOf(char ch, int start) <br>
+            int indexOf(String str, int start)</li>
+        <li>Returns the position of the first found occurrence of specified characters in a string</li>
+        <li>An int value, representing the index of the first occurrence of the character in the string, or -1 if it never occurs</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan Suthar";
+
+                System.out.println(str.indexOf('K'));            // <b>0</b>
+                System.out.println(str.indexOf('a'));            // <b>1</b>
+                System.out.println(str.indexOf('r'));            // <b>2</b>
+                System.out.println(str.indexOf('a'));            // <b>1</b>
+                System.out.println(str.indexOf('N'));            // <b>-1</b>
+
+                System.out.println(str.indexOf("Karan"));        // <b>0</b>
+                System.out.println(str.indexOf("Suthar"));       // <b>6</b>
+                System.out.println(str.indexOf("Karan Suthar")); // <b>0</b> 
+                System.out.println(str.indexOf("aran"));         // <b>1</b>
+                System.out.println(str.indexOf("ran"));          // <b>2</b>
+                System.out.println(str.indexOf("an"));           // <b>3</b>
+                System.out.println(str.indexOf("n S"));          // <b>4</b>
+
+                System.out.println(str.indexOf('a', 0));         // <b>1</b>            
+                System.out.println(str.indexOf('a', 3));         // <b>3</b>
+                System.out.println(str.indexOf('a', 4));         // <b>10</b>
+
+                System.out.println(str.indexOf("Suthar", 3));    // <b>6</b>       
+                System.out.println(str.indexOf("Suthar", 6));    // <b>6</b>
+                System.out.println(str.indexOf("Suthar", 7));    // <b>-1</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>replace()</h2>
+    <ol>
+        <li>public String replace(char searchChar, char newChar)</li>
+        <li>Returns a string replacing all the old char to new char</li>
+        <li>Return type is String</li>
+    </ol>
+    <h2>replace()</h2>
+    <ol>
+        <li>public String replace(CharSequence target, CharSequence replacement)</li>
+        <li>Returns a string replacing all the old CharSequence to new CharSequence</li>
+        <li>Return type is String</li>
+    </ol>
+    <h2>replaceFirst()</h2>
+    <ol>
+        <li>public String replaceFirst(String regex, String replacement)</li>
+        <li>Replaces the first occurrence of a substring that matches the given regular expression with the given replacement</li>
+        <li>Return type is String</li>
+    </ol>
+    <h2>replaceAll()</h2>
+    <ol>
+        <li>public String replaceAll(String regex, String replacement)</li>
+        <li>Replaces each substring of this string that matches the given regular expression with the given replacement</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan Suthar";
+
+                String newStr1 = str.replace('a', 'i');
+                System.out.println(newStr1);    // <b>Kirin Suthir</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+
+                String newStr6 = str.replace("ar", "al");
+                System.out.println(newStr6);    // <b>Kalan Suthal</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+
+                String newStr2 = str.replaceFirst("a", "i");
+                System.out.println(newStr2);    // <b>Kiran Suthar</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+
+                String newStr3 = str.replaceAll("a", "i");
+                System.out.println(newStr3);    // <b>Kirin Suthir</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+
+                String newStr4 = str.replaceFirst("ar", "al");
+                System.out.println(newStr4);    // <b>Kalan Suthar</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+
+                String newStr5 = str.replaceAll("ar", "al");
+                System.out.println(newStr5);    // <b>Kalan Suthal</b>
+                System.out.println(str);        // <b>Karan Suthar</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>substring()</h2>
+    <ol>
+        <li>public String substring(int startIndex) <br>
+            public String substring(int startIndex, int endIndex)</li>
+        <li>Returns a new string which is the substring of a specified string</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan Suthar";
+
+                String newStr1 = str.substring(7);
+                String newStr2 = str.substring(1, 4);
+
+                System.out.println(str);        // <b>Karan Suthar</b>
+                System.out.println(newStr1);    // <b>uthar</b>
+                System.out.println(newStr2);    // <b>ara</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>toUpperCase()</h2>
+    <ol>
+        <li>public String toUpperCase()</li>
+        <li>Converts a string to upper case letters</li>
+        <li>Return type is String</li>
+    </ol>
+    <h2>toLowerCase()</h2>
+    <ol>
+        <li>public String toLowerCase()</li>
+        <li>Converts a string to lower case letters</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "Karan Suthar";
+
+                String newStr1 = str.toUpperCase(); 
+                String newStr2 = str.toLowerCase(); 
+
+                System.out.println(str);     // <b>Karan Suthar</b>
+                System.out.println(newStr1); // <b>KARAN SUTHAR</b>
+                System.out.println(newStr2); // <b>karan suthar</b>
+            }
+        }
+    </pre>
+    <hr>
+    <h2>trim()</h2>
+    <ol>
+        <li>public String trim()</li>
+        <li>Removes whitespace from both ends of a string</li>
+        <li>Return type is String</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        public class Solution 
+        {
+            public static void main(String[] args) 
+            {
+                String str = "    Karan    Suthar    ";
+
+                String newStr = str.trim();
+
+                System.out.println(str);     // <b>    Karan    Suthar</b>    
+                System.out.println(newStr);  // <b>Karan    Suthar    </b>
+            }
+        }
+    </pre>
+</body>
+</html>
