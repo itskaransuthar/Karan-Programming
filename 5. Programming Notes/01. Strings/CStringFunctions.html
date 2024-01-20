@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C String Functions</title>
+    <style>
+        strong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">C String Functions</h1>
+    <hr />
+
+    <h2>strlen()</h2>
+    <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        
+        int main()
+        {
+            char *alphabet = "abcdefghijklmnopqrstuvwxyz";
+        
+            printf("%d\n", sizeof(alphabet)); // <strong>8</strong>
+            printf("%d\n", strlen(alphabet)); // <strong>26</strong>
+        
+            char Alphabet[50] = "abcdefghijklmnopqrstuvwxyz";
+        
+            printf("%d\n", sizeof(Alphabet)); // <strong>50</strong>
+            printf("%d\n", strlen(Alphabet)); // <strong>26</strong>
+        }
+    </pre>
+    <hr />
+    <h2>strcat()</h2>
+    <h3>Example 1:</h3>
+    <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        
+        int main()
+        {
+            char *str1 = "Karan ";
+            char *str2 = "Suthar";
+        
+            strcat(str1, str2); 
+            // Error: Segmentation Fault
+        }
+    </pre>  
+    <h3>Example 2:</h3>
+    <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        
+        int main()
+        {
+            char str1[20] = "Karan ";
+            char *str2 = "Suthar";
+        
+            char *str3 = strcat(str1, str2);
+        
+            printf("%d\n", sizeof(str1)); // <strong>20</strong>
+            printf("%d\n", strlen(str1)); // <strong>12</strong>
+            printf("%s\n", str1);         // <strong>Karan Suthar</strong>
+        
+            printf("%d\n", sizeof(str3)); // <strong>8</strong>
+            printf("%d\n", strlen(str3)); // <strong>12</strong>
+            printf("%s\n", str3);         // <strong>Karan Suthar</strong>
+        }
+    </pre>
+    <hr /> 
+    <h2>strcpy()</h2>
+    <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        
+        int main()
+        {
+            char *str1 = "Hello Jii, Kese Hain Aap";
+            char str2[100];
+        
+            char *str3 = strcpy(str2, str1);
+        
+            printf("%d\n", sizeof(str1)); // <strong>8</strong>
+            printf("%d\n", strlen(str1)); // <strong>24</strong>
+            printf("%s\n", str1);         // <strong>Hello Jii, Kese Hain Aap</strong>
+        
+            printf("%d\n", sizeof(str2)); // <strong>100</strong>
+            printf("%d\n", strlen(str2)); // <strong>24</strong>
+            printf("%s\n", str2);         // <strong>Hello Jii, Kese Hain Aap</strong>
+        
+            printf("%d\n", sizeof(str3)); // <strong>8</strong>
+            printf("%d\n", strlen(str3)); // <strong>24</strong>
+            printf("%s\n", str3);         // <strong>Hello Jii, Kese Hain Aap</strong>
+        }
+    </pre>
+    <hr />
+    <h2>strcmp()</h2>
+    <pre>
+        #include &lt;stdio.h>
+        #include &lt;string.h>
+        
+        void main() 
+        {
+            char *str1 = "Hello";
+            char str2[] = "Hello";
+            char str3[] = "Hi"; 
+            char str4[10] = "Karan";
+            char str5[13] = "KaraN";
+        
+            printf("%d\n", strcmp(str1, str2)); // <strong>0</strong>
+            printf("%d\n", strcmp(str1, str3)); // <strong>-4</strong>
+            printf("%d\n", strcmp(str4, str5)); // <strong>32</strong>
+            printf("%d\n", strcmp(str5, str4)); // <strong>-32</strong>
+        }
+    </pre>
+    <hr>
+    <h2>strrev()</h2>
+    <pre>
+        #include &lt;stdio.h>
+        #include &lt;string.h>
+        
+        int main()
+        {
+            char str[50] = "Karan Suthar";
+            // char *str = "Karan Suthar";
+        
+            printf("%s\n", str);          // <strong>Karan Suthar</strong> 
+            printf("%s\n", strrev(str));  // <strong>rahtuS naraK</strong>
+        
+            return 0;
+        }
+    </pre>
+    <p style="font-family: 'Courier New', Courier, monospace; color: blue; font-size: smaller;">// Note:  In C language we can use the function strrev() present in the header file string.h to reverse any given string, strrev() is a non-standard string library function ie. it is not standardly available with all the compilers, only some specific compilers support it, but we can write our own implementation of a function to a reverse a string, if the function strrev() is not available.</p>
+
+    <hr>
+    <h2>strupr()</h2>
+    <pre>
+        #include &lt;stdio.h>
+        #include &lt;string.h>
+        
+        int main()
+        {
+            char str[50] = "Karan Suthar";
+            // char *str = "Karan Suthar";
+        
+            printf("%s\n", str);          // <strong>Karan Suthar</strong>
+            printf("%s\n", strupr(str));  // <strong>KARAN SUTHAR</strong>
+        
+            return 0;
+        }            
+    </pre>
+    <hr>
+    <h2>strlwr()</h2>
+    <pre>
+        #include &lt;stdio.h>
+        #include &lt;string.h>
+        
+        int main()
+        {
+            char str[50] = "Karan Suthar";
+            // char *str = "Karan Suthar";
+        
+            printf("%s\n", str);          // <strong>Karan Suthar</strong>
+            printf("%s\n", strlwr(str));  // <strong>karan suthar</strong>
+        
+            return 0;
+        }            
+    </pre>
+    <hr>
+    <h2>strchr()</h2>
+    <pre>
+        #include &lt;stdio.h>
+        #include &lt;string.h>
+        
+        int main()
+        {
+            char str[50] = "Karan Suthar";
+            // char *str = "Karan Suthar";
+        
+            char *ptr = strchr(str, 'r');
+        
+            printf("%s\n", str);          // <strong>Karan Suthar</strong>
+            printf("%c\n", *ptr);         // <strong>r</strong>
+            printf("%c\n", *(ptr + 1));   // <strong>a</strong>
+            printf("%c\n", *(ptr + 2));   // <strong>n</strong>
+            printf("%s\n", ptr);          // <strong>ran Suthar</strong>
+        
+            return 0;
+        }            
+    </pre>
+</body>
+</html>
