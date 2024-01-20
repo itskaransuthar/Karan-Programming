@@ -8,6 +8,10 @@
         strong {
             color: red;
         }
+        li {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+        }
     </style>
 </head>
 <body>
@@ -15,6 +19,11 @@
     <hr />
 
     <h2>strlen()</h2>
+    <ol>
+        <li>size_t strlen(const char *str);</li>
+        <li>Returns the length of a string (excluding the null character)</li>
+    </ol>
+    <h3>Example:</h3>
     <pre>
         #include &lt;stdio.h&gt;
         #include &lt;string.h&gt;
@@ -34,6 +43,10 @@
     </pre>
     <hr />
     <h2>strcat()</h2>
+    <ol>
+        <li>char *strcat(char *dest, const char *src);</li>
+        <li>Concatenates (appends) one string to the end of another and return pointer to that string</li>
+    </ol>
     <h3>Example 1:</h3>
     <pre>
         #include &lt;stdio.h&gt;
@@ -71,6 +84,11 @@
     </pre>
     <hr /> 
     <h2>strcpy()</h2>
+    <ol>
+        <li>char *strcpy(char *dest, const char *src);</li>
+        <li>Copies src string to dest and return pointer to dest string</li>
+    </ol>
+    <h3>Example:</h3>
     <pre>
         #include &lt;stdio.h&gt;
         #include &lt;string.h&gt;
@@ -97,6 +115,18 @@
     </pre>
     <hr />
     <h2>strcmp()</h2>
+    <ol>
+        <li>int strcmp(const char *str1, const char *str2);</li>
+        <li>
+            Compares two strings and returns
+            <ul style="font-size: medium; list-style-type: square;">
+                <li>0 if both strings are equal</li>
+                <li>A negative value if str1 is less than str2</li>
+                <li>A positive value if str1 is greater than str2</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Example:</h3>
     <pre>
         #include &lt;stdio.h>
         #include &lt;string.h>
@@ -117,6 +147,13 @@
     </pre>
     <hr>
     <h2>strrev()</h2>
+    <ol>
+        <li>char *strrev(char *str);</li>
+        <li>Reverse the string str and store it in string str only and returns pointer to str string</li>
+    </ol>
+    <h3>Example:</h3>
+    
+    
     <pre>
         #include &lt;stdio.h>
         #include &lt;string.h>
@@ -170,6 +207,11 @@
     </pre>
     <hr>
     <h2>strchr()</h2>
+    <ol>
+        <li>char *strchr(const char *str, int c);</li>
+        <li>This returns a pointer to the first occurrence of the character c in the string str, or NULL if the character is not found</li>
+    </ol>
+    <h3>Example:</h3>
     <pre>
         #include &lt;stdio.h>
         #include &lt;string.h>
@@ -180,6 +222,12 @@
             // char *str = "Karan Suthar";
         
             char *ptr = strchr(str, 'r');
+            
+            if(ptr == NULL)
+            {
+                printf("Element not found!!!");
+                return 0;
+            }
         
             printf("%s\n", str);          // <strong>Karan Suthar</strong>
             printf("%c\n", *ptr);         // <strong>r</strong>

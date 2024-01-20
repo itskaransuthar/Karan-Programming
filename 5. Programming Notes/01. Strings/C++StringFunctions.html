@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ String Functions</title>
+    <style>
+        strong {
+            color: red;
+        }
+        li {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">C++ String Functions</h1>
+    <hr />
+
+    <h2>String Length</h2>
+    <ol>
+        <li>length() <em>or</em> size()</li>
+        <li>string_object.size()
+            or
+            string_object.length()</li>
+        <li>This function returns the number of characters in the string object</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+        
+        int main()
+        {
+            string str = "Karan";
+        
+            cout << str.size() << endl;       // <strong>5</strong>
+            cout << str.length() << endl;     // <strong>5</strong>
+            cout << str.capacity() << endl;   // <strong>15</strong>
+            cout << sizeof(str) << endl;      // <strong>32</strong>
+        
+            char *newStr = "Karan";
+        
+            cout << strlen(newStr) << endl;   // <strong>5</strong>
+            cout << sizeof(newStr) << endl;   // <strong>8</strong>        
+        }            
+    </pre>
+    <hr />
+
+    <h2>Accessing Character</h2>
+    <ol>
+        <li>at()</li>
+        <li>string_object.at(index);</li>
+        <li>This function returns the character present at the index</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+        
+        int main()
+        {
+            string str = "Karan Suthar";
+        
+            cout << str.at(0) << endl;       // <strong>K</strong>
+            cout << str.at(1) << endl;       // <strong>a</strong>
+            cout << str.at(2) << endl;       // <strong>r</strong>
+            cout << str.at(3) << endl;       // <strong>a</strong>
+            cout << str.at(4) << endl;       // <strong>n</strong>
+            cout << str.at(5) << endl;       // <strong> </strong>
+            cout << str.at(6) << endl;       // <strong>S</strong>
+            cout << str.at(7) << endl;       // <strong>u</strong>
+            // cout << str.at(-1) << endl;   // <strong>Error: std::out_of_range</strong>
+            // cout << str.at(100) << endl;  // <strong>Error: std::out_of_range</strong>
+
+            cout << str[0] << endl;          // <strong>K</strong>
+            cout << str[1] << endl;          // <strong>a</strong>
+            cout << str[2] << endl;          // <strong>r</strong>
+            cout << str[3] << endl;          // <strong>a</strong>
+            cout << str[4] << endl;          // <strong>n</strong>
+            cout << str[5] << endl;          // <strong> </strong>
+            cout << str[6] << endl;          // <strong>S</strong>
+            cout << str[7] << endl;          // <strong>u</strong>
+            // cout << str[-1] << endl;      // <strong>Garbage</strong>
+            // cout << str[100] << endl;     // <strong>Garbage</strong>
+        }                        
+    </pre>
+    <hr />
+
+    <h2>Concatenating Strings</h2>
+    <ol>
+        <li>+ operator</li>
+        <li>string_object1 + string_object2</li>
+        <li>+ operator is used to concatenate two strings</li>
+    </ol>
+    <ul style="list-style-type: none;">
+        <li>
+            <em>or</em>
+        </li>
+    </ul>
+    <ol>
+        <li>append()</li>
+        <li>string_object1.append(string2)</li>
+        <li>Returns reference to the final string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+        
+        int main()
+        {
+            string str1 = "Karan";
+            string str2 = "Suthar";
+        
+            string str3 = str1 + " " + str2;
+        
+            cout << str1 << endl; // <strong>Karan</strong>
+            cout << str2 << endl; // <strong>Suthar</strong>
+        
+            string str4 = (str1.append(" ")).append(str2);
+        
+            cout << str1 << endl; // <strong>Karan Suthar</strong>
+            cout << str2 << endl; // <strong>Suthar</strong>
+            cout << str3 << endl; // <strong>Karan Suthar</strong>
+            cout << str4 << endl; // <strong>Karan Suthar</strong>
+        }                     
+    </pre>
+    <hr />
+
+    <h2>String Comparison</h2>
+    <ol>
+        <li>== operator</li>
+        <li>string_object1 == string_object2</li>
+        <li>Returns 1(true) if both the strings are equal, otherwise returns 0(false)</li>
+    </ol>
+    <ul style="list-style-type: none;">
+        <li>
+            <em>or</em>
+        </li>
+    </ul>
+    <ol>
+        <li>compare()</li>
+        <li>str1.compare(str2);</li>
+        <li>Compares two strings and returns</li>
+        <ul style="list-style-type: square;">
+            <li>0, if the strings are equal</li>
+            <li>Positive value, if str1 is greater than str2</li>
+            <li>Negative value, if str1 is less than str2</li>
+        </ul>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            char *str1 = "Hello";
+            char str2[] = "Hello";
+            char str3[] = "Hi"; 
+            char str4[10] = "Karan";
+            char str5[13] = "KaraN";
+
+            string str6 = "Hello";
+            string str7 = "Hello";
+            string str8 = "Hi";
+            string str9 = "Karan";
+            string str10 = "KaraN";
+
+            int value = str9.compare(str10);
+
+            printf("%d\n", strcmp(str1, str2));  // <strong>0</strong>
+            printf("%d\n", strcmp(str1, str3));  // <strong>-4</strong>
+            printf("%d\n", strcmp(str4, str5));  // <strong>32</strong>
+            printf("%d\n", strcmp(str5, str4));  // <strong>-32</strong>
+
+            printf("%d\n", str6.compare(str7));  // <strong>0</strong>
+            printf("%d\n", str6.compare(str8));  // <strong>-4</strong>
+            printf("%d\n", value);               // <strong>32</strong>
+            printf("%d\n", str10.compare(str9)); // <strong>-32</strong>
+
+            printf("%d\n", str6 == str7);        // <strong>1</strong>
+            printf("%d\n", str6 == str8);        // <strong>0</strong>
+            printf("%d\n", str9 == str10);       // <strong>0</strong>
+            printf("%d\n", str10 == str9);       // <strong>0</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Searching</h2>
+    <ol>
+        <li>find()</li>
+        <li>str1.find(var);</li>
+        <li><b>var:</b> It can be a C style string, C++ style string, or a character that is to be searched in the string
+        </li>
+        <li>It returns the index to the first occurrence of the character or a substring in the string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Suthar";
+
+            int index = str.find("S");
+
+            cout << index << endl;                  // <strong>6</strong>
+            cout << str.find("thar") << endl;       // <strong>8</strong>
+            cout << str.find("ran") << endl;        // <strong>2</strong>
+            cout << str.find(' ') << endl;          // <strong>5</strong>
+            cout << str.find("Kese Hain") << endl;  // <strong>Garbage</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Replacing</h2>
+    <ol>
+        <li>replace()</li>
+        <li>str1.replace(index, size, str2);</li>
+        <li>Returns reference to the str1</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Suthar";
+    
+            string newStr = str.replace(str.find("Suthar"), 6, "Sharma");
+            // string newStr = str.replace(6, 6, "Sharma");
+
+            cout << str << endl;     // <strong>Karan Sharma</strong>
+            cout << newStr << endl;  // <strong>Karan Sharma</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Substring</h2>
+    <ol>
+        <li>substr()</li>
+        <li>str1.substr(start, end);</li>
+        <li>It returns the newly created string object</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Suthar";
+
+            string resultStr1 = str.substr(0, 5); 
+            // string resultStr2 = str.substr(-1, 53); // Error: std::out_of_range
+
+            cout << resultStr1 << endl; // <strong>Karan</strong>
+            cout << str << endl;        // <strong>Karan Suthar</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Inserting</h2>
+    <ol>
+        <li>insert()</li>
+        <li>str1.insert(index, str2);</li>
+        <li>It returns reference to the str1</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Suthar";
+    
+            // string newStr = str.insert(50, " Jii"); // Error: std::out_of_range
+            string newStr = str.insert(5, " Jii");
+
+            cout << str << endl;     // <strong>Karan Jii Suthar</strong>
+            cout << newStr << endl;  // <strong>Karan Jii Suthar</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Erasing</h2>
+    <ol>
+        <li>erase()</li>
+        <li>str1.erase(index, numOfCharacters);</li>
+        <li>It returns reference to the str1</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Jii Suthar";
+
+            // string newStr = str.erase(50, 4); // Error: std::out_of_range 
+            string newStr = str.erase(5, 4);
+
+            cout << str << endl;     // <strong>Karan Suthar</strong>
+            cout << newStr << endl;  // <strong>Karan Suthar</strong>
+        }                     
+    </pre>
+    <hr>
+    <h2>Clearing</h2>
+    <ol>
+        <li>clear()</li>
+        <li>str1.clear();</li>
+        <li>It returns void</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        #include &lt;iostream>
+        #include &lt;string.h>
+        using namespace std;
+
+        int main()
+        {
+            string str = "Karan Jii Suthar";
+
+            str.clear();
+
+            cout << str << endl;          //
+            cout << str.length() << endl; // <strong>0</strong>
+        }                     
+    </pre>
+</body>
+</html>
