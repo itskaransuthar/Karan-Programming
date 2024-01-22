@@ -66,6 +66,19 @@ Node * reverseLL2(Node *head)
     return पिछला;
 }
 
+//? Reverse Linked List Using Recursion (Method 3)
+Node * reverseLL3(Node *पिछला, Node *curr)
+{
+    // Base Condition
+    if(curr == NULL)
+        return पिछला;
+
+    // Recursive Call
+    Node *अगला = curr -> next;
+    curr -> next = पिछला;
+    return reverseLL3(curr, अगला);
+}
+
 //? Display Linked List
 void displayList()
 {
@@ -89,5 +102,7 @@ int main()
     displayList();
 
     head = reverseLL1(head);
+    head = reverseLL2(head);
+    head = reverseLL3(NULL, head);
     displayList();
 }  

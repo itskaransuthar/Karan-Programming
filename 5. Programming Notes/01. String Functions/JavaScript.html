@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods</title>
+    <style>
+        ol {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+        }
+        b {
+            color: red;
+        }
+        i {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Java String Methods</h1>
+    <hr>
+    <h2>length</h2>
+    <ol>
+        <li>The length property returns the length of a string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        let str1 = "Karan"
+
+        let len = str1.length
+        console.log(len)          // <b>5</b>
+
+        let str2 = " Karan "
+        console.log(str2.length)  // <b>7</b>
+    </pre>
+    <hr>
+    <h2>at()</h2>
+    <ol>
+        <li>The at() method returns the character at a specified index (position) in a string</li>
+        <li>It allows the use of negative indexes while charAt() do not</li>
+        <li>Now you can use str.at(-2) instead of str.charAt(str.length-2)</li>
+    </ol>
+    <h2>charAt()</h2>
+    <ol>
+        <li>The charAt() method returns the character at a specified index (position) in a string</li>
+    </ol>
+    <h2>charCodeAt()</h2>
+    <ol>
+        <li>The charCodeAt() method returns the code of the character at a specified index in a string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        console.log(str[2])                      // <b>r</b>  
+        console.log(str.at(2))                   // <b>r</b>              
+        console.log(str.charAt(2))               // <b>r</b>                  
+        console.log(str.charCodeAt(2))           // <b>114</b>                           
+        
+        console.log(str[-2])                     // <b>undefined</b>            
+        console.log(str.at(-2))                  // <b>a</b>       
+        console.log(str.charAt(str.length - 2))  // <b>a</b>    
+        console.log(str.charAt(-2))              // <b></b>                   
+        console.log(str.charCodeAt(-2))          // <b>NaN</b>                       
+            
+        console.log(str[100])                    // <b>undefined</b>             
+        console.log(str.at(100))                 // <b>undefined</b>                
+        console.log(str.charAt(100))             // <b></b>                    
+        console.log(str.charCodeAt(100))         // <b>NaN</b>    
+    </pre>
+    <hr>
+    <h2>String Concatenation</h2>
+    <ol>
+        <li>concat() <br>
+            concat(str1) <br>
+            concat(str1, str2) <br>
+            concat(str1, str2, ... strN)</li>
+        <li>A new string containing the combined text of the strings provided</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        let str1 = "Karan"
+        let str2 = 'Suthar'
+        
+        let newStr1 = str1.concat(" ").concat(str2);
+        let newStr2 = str1 + " " + str2
+        let newStr3 = str1.concat(" ", str2)
+        let newStr4 = str1.concat(" ", str2, " Jii", ", ", "Kese Hain Aap", "!!")
+        
+        console.log(str1)          // <b>Karan</b>                
+        console.log(str2)          // <b>Suthar</b>                   
+        console.log(newStr1)       // <b>Karan Suthar</b>                      
+        console.log(newStr2)       // <b>Karan Suthar</b>                      
+        console.log(newStr3)       // <b>Karan Suthar</b>              
+        console.log(newStr4)       // <b>Karan Suthar Jii, Kese Hain Aap!!</b> 
+        
+        const hello = "Hello, ";
+        console.log(hello.concat("Karan", ". Have a nice day!")); // <b>Hello, Karan. Have a nice day!</b> 
+        
+        const greetList = ["Hello", " ", "Aniket", "!"];
+
+        "".concat(...greetList);   // <i>"Hello Aniket!"</i>         
+        "".concat({});             // <i>"[object Object]"</i>           
+        "".concat([]);             // <i>""</i>          
+        "".concat(null);           // <i>"null"</i>           
+        "".concat(true);           // <i>"true"</i>           
+        "".concat(4, 5);           // <i>"45"</i>               
+    </pre>
+    <hr>
+    <h2>String Comparison</h2>
+    <h3>Example:</h3>
+    <pre>
+        const str1 = "Karan"
+        const str2 = "KaraN"
+        
+        console.log(str1 == str2) // <b>false</b>
+        console.log(str1 < str2)  // <b>false</b>
+        console.log(str1 > str2)  // <b>true</b>
+    </pre>
+    <hr>
+    <h2>indexOf()</h2>
+    <ol>
+        <li>indexOf(searchString) <br>
+            indexOf(searchString, position)</li>
+        <li>The index of the first occurrence of searchString found, or -1 if not found</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        const str = "Karan Suthar"
+        
+        let index1 = str.indexOf('r')
+        let index2 = str.indexOf("r")
+        let index3 = str.indexOf(" S")
+        let index4 = str.indexOf(" s")
+        let index5 = str.indexOf("ran")
+        
+        let index6 = str.indexOf('r', 2)
+        let index7 = str.indexOf('r', 3)
+        let index8 = str.indexOf(' S', 6)
+        let index9 = str.indexOf(' s', 1)
+        let index10 = str.indexOf("ran", 5)
+        
+        console.log(index1) // <b>2</b>
+        console.log(index2) // <b>2</b>
+        console.log(index3) // <b>5</b>
+        console.log(index4) // <b>-1</b>
+        console.log(index5) // <b>2</b>
+        console.log(index6) // <b>2</b>
+        console.log(index7) // <b>11</b>
+        console.log(index8) // <b>-1</b>
+        console.log(index9) // <b>-1</b>              
+    </pre>
+
+    <hr>
+    <h2>replace()</h2>
+    <ol>
+        <li>replace(pattern, replacement)</li>
+        <li>A new string, with one, some, or all matches of the pattern replaced by the specified replacement</li>
+    </ol>
+    <h2>replaceAll()</h2>
+    <ol>
+        <li>replaceAll(pattern, replacement)</li>
+        <li>A new string, with all matches of a pattern replaced by a replacement</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        console.log(str.replace('a', 'i'));     // <b>Kiran Suthar</b> 
+        console.log(str.replaceAll('a', 'i'));  // <b>Kirin Suthir</b>  
+        console.log(str);                       // <b>Karan Suthar</b>
+                                               
+        console.log("abc".replace("", "-->"))   // <b>-->abc</b>        
+    </pre>
+    <hr>
+    <h2>slice()</h2>
+    <ol>
+        <li>slice(indexStart) <br>
+            slice(indexStart, indexEnd)</li>
+        <li>A new string, with one, some, or all matches of the pattern replaced by the specified replacement</li>
+    </ol>
+    <h2>substring()</h2>
+    <ol>
+        <li>substring(indexStart) <br>
+            substring(indexStart, indexEnd)</li>
+        <li>substring() is similar to slice(), the difference is that start and end values less than 0 are treated as 0 in substring()</li>
+    </ol>
+    <h2>substr()</h2>
+    <ol>
+        <li>substr(start) <br>
+            substr(start, length)</li>
+        <li>substr() is similar to slice(), the difference is that the second parameter specifies the length of the extracted part</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+        
+        console.log(str.slice(2, 5));               // <b>ran</b>                
+        console.log(str.slice(-4, -1));             // <b>tha</b>     
+        console.log(str.slice(-4, 2));              // <b></b>         
+        console.log(str.slice(6));                  // <b>Suthar</b>       
+        console.log(str.slice(-6));                 // <b>Suthar</b>        
+        console.log(str.slice());                   // <b>Karan Suthar</b>      
+        console.log(str.slice(5445));               // <b></b>          
+        console.log(str.slice(-445));               // <b>Karan Suthar</b>          
+        console.log(str.slice(-31, 65));            // <b>Karan Suthar</b>             
+        console.log(str.slice(30, 50));             // <b></b>   
+        
+        console.log(str.substring(2, 5));           // <b>ran</b>                           
+        console.log(str.substring(-4, -1));         // <b></b>     
+        console.log(str.substring(-4, 2));          // <b>Ka</b>                             
+        console.log(str.substring(6));              // <b>Suthar</b>                        
+        console.log(str.substring(-6));             // <b>Karan Suthar</b>                         
+        console.log(str.substring());               // <b>Karan Suthar</b>                       
+        console.log(str.substring(5445));           // <b></b>                           
+        console.log(str.substring(-445));           // <b>Karan Suthar</b>                           
+        console.log(str.substring(-31, 65));        // <b>Karan Suthar</b>                              
+        console.log(str.substring(30, 50));         // <b></b>                             
+        
+        console.log(str.substr(2, 5));              // <b>ran S</b>                      
+        console.log(str.substr(-4, -1));            // <b></b>      
+        console.log(str.substr(-4, 2));             // <b>th</b>                    
+        console.log(str.substr(6));                 // <b>Suthar</b>                    
+        console.log(str.substr(-6));                // <b>Suthar</b>                     
+        console.log(str.substr());                  // <b>Karan Suthar</b>                   
+        console.log(str.substr(5445));              // <b></b>                       
+        console.log(str.substr(-445));              // <b>Karan Suthar</b>                       
+        console.log(str.substr(-31, 65));           // <b>Karan Suthar</b>                          
+        console.log(str.substr(30, 50));            // <b></b>                                
+    </pre>
+    <hr>
+    <h2>toLowerCase()</h2>
+    <ol>
+        <li>toLowerCase()</li>
+        <li>The toLowerCase() method returns the value of the string converted to lower case. toLowerCase() does not affect the value of the string str itself</li>
+    </ol>
+    <h2>toUpperCase()</h2>
+    <ol>
+        <li>toUpperCase()</li>
+        <li>The toUpperCase() method returns the value of the string converted to uppercase. This method does not affect the value of the string itself since JavaScript strings are immutable</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "kaRaN sUtHAR"
+
+        console.log(str.toLowerCase()); // <b>karan suthar</b>
+        console.log(str.toUpperCase()); // <b>KARAN SUTHAR</b>
+    </pre>
+    <hr>
+    <h2>trim()</h2>
+    <ol>
+        <li>trim()</li>
+        <li>A new string representing str stripped of whitespace from both its beginning and end. Whitespace is defined as white space characters plus line terminators, If neither the beginning or end of str has any whitespace, a new string is still returned (essentially a copy of str)</li>
+    </ol>
+    <h2>trimStart()</h2>
+    <ol>
+        <li>trimStart()</li>
+        <li>
+            A new string representing str stripped of whitespace from its beginning (left side). Whitespace is defined as white space characters plus line terminators, If the beginning of str has no whitespace, a new string is still returned (essentially a copy of str)
+        </li>
+    </ol>
+    <h2>trimEnd()</h2>
+    <ol>
+        <li>trimEnd()</li>
+        <li>
+            A new string representing str stripped of whitespace from its end (right side). Whitespace is defined as white space characters plus line terminators, If the end of str has no whitespace, a new string is still returned (essentially a copy of str)
+        </li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        txt1 = "    Karan    Suthar    "
+
+        str1 = txt1.trimStart();
+        str2 = txt1.trimEnd();
+        str3 = txt1.trim();
+        
+        console.log(str1)  // <b>Karan    Suthar    </b> 
+        console.log(str2)  // <b>    Karan    Suthar</b> 
+        console.log(str3)  // <b>Karan    Suthar</b>
+    </pre>
+    <hr>
+    <h2>split()</h2>
+    <ol>
+        <li>split(separator) <br>
+            split(separator, limit)</li>
+        <li>Returns An Array of strings, split at each point where the separator occurs in the given string.</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        const str = "Karan Suthar, Kese Hain Aap, Sab Badhiya!!!"
+
+        console.log(str.split())           // <b>[ 'Karan Suthar, Kese Hain Aap, Sab Badhiya!!!' ]</b>     
+        console.log(str.split(" "))        // <b>[ 'Karan', 'Suthar,', 'Kese', 'Hain', 'Aap,', 'Sab', 'Badhiya!!!' ]</b>       
+        console.log(str.split(","))        // <b>[ 'Karan Suthar', ' Kese Hain Aap', ' Sab Badhiya!!!' ]</b>      
+        console.log(str.split(",", 1))     // <b>[ 'Karan Suthar' ]</b>           
+        console.log(str.split(",", 2))     // <b>[ 'Karan Suthar', ' Kese Hain Aap' ]</b>           
+        console.log(str.split("Suthar"));  // <b>[ 'Karan ', ', Kese Hain Aap, Sab Badhiya!!!' ]</b>
+        console.log(str.split("&"));       // <b>[ 'Karan Suthar, Kese Hain Aap, Sab Badhiya!!!' ]</b>
+    </pre>
+</body>
+</html>

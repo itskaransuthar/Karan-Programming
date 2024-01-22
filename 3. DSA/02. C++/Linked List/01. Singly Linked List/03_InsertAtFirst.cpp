@@ -94,7 +94,6 @@ public:
 
         // Recursive Call
         Node *newNode = new Node(arr[index]);
-        newNode -> data = arr[index];
         newNode -> next = prev;
         
         return insertList5(arr, index + 1, size, newNode);

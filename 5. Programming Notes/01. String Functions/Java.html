@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Java String Functions</h1>
+    <h1 style="text-align: center;">Java String Methods</h1>
     <hr>
     <h2>length()</h2>
     <ol>
@@ -76,11 +76,13 @@
                 String str2 = "Suthar";
 
                 String newStr = str1.concat(str2);
+                // String newStr = str1 + str2;
 
                 System.out.println(str1);                            // <b>Karan</b>
                 System.out.println(str2);                            // <b>Suthar</b>
                 System.out.println(newStr);                          // <b>KaranSuthar</b>
                 System.out.println(str1.concat(" ").concat(str2));   // <b>Karan Suthar</b>
+                System.out.println(str1 + " " + str2);               // <b>Karan Suthar</b>
             }
         }
     </pre>

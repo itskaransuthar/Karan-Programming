@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python String Methods</title>
+    <style>
+        b {
+            color: red;
+        }
+        li {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Python String Methods</h1>
+    <hr>
+    <h2>String Length</h2>
+    <ol>
+        <li>len(object)</li>
+        <li>The len() function returns the number of items in an object</li>
+        <li>When the object is a string, the len() function returns the number of characters in the string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan"
+        print(len(str))   # <b>5</b>   
+
+        str = " Karan Suthar "
+        print(len(str))   # <b>14</b>
+    </pre>
+    <hr>
+    <h2>Accessing Character</h2>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        print(str[2])  # <b>r</b>
+        print(str[3])  # <b>a</b>
+        print(str[4])  # <b>n</b>
+        print(str[6])  # <b>S</b>
+
+        print(str[-2]) # <b>a</b>
+        print(str[-3]) # <b>h</b>
+        print(str[-4]) # <b>t</b>
+        print(str[-6]) # <b>S</b>
+    </pre>
+    <hr>
+    <h2>String Concatenation</h2>
+    <h3>Example:</h3>
+    <pre>
+        str1 = "Karan"
+        str2 = "Suthar"
+
+        newStr = str1 + " " + str2
+
+        print(newStr) # <b>Karan Suthar</b>
+    </pre>
+    <hr>
+    <h2>String Comparison</h2>
+    <h3>Example:</h3>
+    <pre>
+        str1 = "Karan";
+        str2 = "KaraN";
+
+        print(str1 > str2)   # <b>True</b>
+        print(str1 < str2)   # <b>False</b>
+        print(str1 == str2)  # <b>False</b>
+    </pre>
+    <hr>
+    <h2>index()</h2>
+    <ol>
+        <li>string.index(value, start, end)</li>
+        <li>The index() method finds the first occurrence of the specified value</li>
+        <li>The index() method raises an exception if the value is not found</li>
+    </ol>
+    <h2>find()</h2>
+    <ol>
+        <li>string.find(value, start, end)</li>
+        <li>The find() method finds the first occurrence of the specified value</li>
+        <li>The find() method returns -1 if the value is not found</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        print(str.index('r'))              # <b>2</b>
+        print(str.index(" S"))             # <b>5</b>
+        # print(str.index(' K'))           # <b>ValueError: substring not found</b> 
+
+        print(str.find('r'))               # <b>2</b>
+        print(str.find(" S"))              # <b>5</b>
+        print(str.find(' K'))              # <b>-1</b>
+
+        # print(str.index("ran", 0, 4))    # <b>ValueError: substring not found</b>
+        print(str.index("ran", 0, 5))      # <b>2</b>
+
+        print(str.find("ran", 1, 4))       # <b>1</b>
+        print(str.find("ran", 1, 5))       # <b>2</b>
+    </pre>
+    <hr>
+    <h2>replace()</h2>
+    <ol>
+        <li>string.replace(oldValue, newValue, count)</li>
+        <li>Returns a string where a specified value is replaced with a specified value</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        print(str)                       # <b>Karan Suthar</b>
+        print(str.replace("ran", 'run')) # <b>Karun Suthar</b>
+        print(str.replace("a", "i", 1))  # <b>Kiran Suthar</b>
+        print(str.replace('a', 'i', 2))  # <b>Kirin Suthar</b>
+        print(str.replace("a", "i"))     # <b>Kirin Suthir</b>
+    </pre>   
+    <hr>
+    <h2>Substring</h2>
+    <h3>Example:</h3>
+    <pre>
+        str = "Karan Suthar"
+
+        print(str[2:5])     # <b>ran</b>    
+        print(str[-10:-7])  # <b>ran</b>  
+        print(str[2:-2:3])  # <b>r t</b>  
+        print(str[::])      # <b>Karan Suthar</b>          
+        print(str[::2])     # <b>KrnSta</b>           
+        print(str[2::])     # <b>ran Suthar</b>           
+        print(str[:-2:])    # <b>Karan Suth</b> 
+        print(str[2:500])   # <b>ran Suthar</b>
+        print(str[-343:5])  # <b>Karan</b>  
+    </pre>
+    
+    <hr>
+    <h2>lower()</h2>
+    <ol>
+        <li>string.lower()</li>
+        <li>The lower() method returns a string where all characters are lower case</li>
+        <li>Symbols and Numbers are ignored</li>
+    </ol>
+    <h2>upper()</h2>
+    <ol>
+        <li>string.upper()</li>
+        <li>The upper() method returns a string where all characters are in upper case</li>
+        <li>Symbols and Numbers are ignored</li>
+    </ol>
+    <h2>capitalize()</h2>
+    <ol>
+        <li>string.capitalize()</li>
+        <li>The capitalize() method returns a string where the first character is upper case, and the rest is lower case</li>
+    </ol>
+    <h2>title()</h2>
+    <ol>
+        <li>string.title()</li>
+        <li>The title() method returns a string where the first character in every word is upper case. Like a header, or a title</li>
+        <li>If the word contains a number or a symbol, the first letter after that will be converted to upper case</li>
+    </ol>
+    <h2>swapcase()</h2>
+    <ol>
+        <li>string.swapcase()</li>
+        <li>The swapcase() method returns a string where all the upper case letters are lower case and vice versa</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "kaRan sUthAR 453jI"
+
+        newStr1 = str.lower()
+        newStr2 = str.upper()
+        newStr3 = str.capitalize()
+        newStr4 = str.title()
+        newStr5 = str.swapcase()
+
+        print(newStr1) # <b>karan suthar 453ji</b> 
+        print(newStr2) # <b>KARAN SUTHAR 453JI</b> 
+        print(newStr3) # <b>Karan suthar 453ji</b> 
+        print(newStr4) # <b>Karan Suthar 453Ji</b> 
+        print(newStr5) # <b>KArAN SuTHar 453Ji</b> 
+    </pre>    
+    <hr>
+    <h2>lstrip()</h2>
+    <ol>
+        <li>string.lstrip(characters)</li>
+        <li>Returns a left trim version of the string</li>
+    </ol>
+    <h2>rstrip()</h2>
+    <ol>
+        <li>string.rstrip(characters)</li>
+        <li>Returns a right trim version of the string</li>
+    </ol>
+    <h2>strip()</h2>
+    <ol>
+        <li>string.strip(characters)</li>
+        <li>Returns a trimmed version of the string</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        txt1 = "    Karan    Suthar    "
+
+        str1 = txt1.lstrip();
+        str2 = txt1.rstrip();
+        str3 = txt1.strip();
+        
+        print(str1)  # <b>Karan    Suthar    </b>
+        print(str2)  # <b>    Karan    Suthar</b>
+        print(str3)  # <b>Karan    Suthar</b>
+        
+        txt2 = ",,,,,nnttgg...    ..banana...   ,,,,,   .ngtn"
+        
+        str4 = txt2.lstrip(",. ntg")
+        str5 = txt2.rstrip(" .nt,g")
+        str6 = txt2.strip(" .g,tn")
+        
+        print(str4)  # <b>banana...   ,,,,,   .ngtn</b>
+        print(str5)  # <b>,,,,,nnttgg...    ..banana</b>
+        print(str6)  # <b>banana</b>
+    </pre>    
+    <hr>
+    <h2>split()</h2>
+    <ol>
+        <li>string.split(separator, maxsplit)</li>
+        <li>The split() method splits a string into a list</li>
+        <li>You can specify the separator, default separator is any whitespace</li>
+        <li>When maxsplit is specified, the list will contain the specified number of elements plus one</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        str = "Hello Jii, Kese Hain Aap, Sab Badhiya"
+
+        lst1 = str.split()
+        lst2 = str.split(",")
+        lst3 = str.split(",", 1)
+
+        print(lst1) # <b>['Hello', 'Jii,', 'Kese', 'Hain', 'Aap,', 'Sab', 'Badhiya']</b>
+        print(lst2) # <b>['Hello Jii', ' Kese Hain Aap', ' Sab Badhiya']</b>
+        print(lst3) # <b>['Hello Jii', ' Kese Hain Aap, Sab Badhiya']</b>
+    </pre>  
+    <hr>
+    <h2>zfill()</h2>
+    <ol>
+        <li>string.zfill(len)</li>
+        <li>The zfill() method adds zeros (0) at the beginning of the string, until it reaches the specified length</li>
+        <li>If the value of the len parameter is less than the length of the string, no filling is done</li>
+    </ol>
+    <h3>Example:</h3>
+    <pre>
+        a = "25"
+        b = "Karan"
+        c = "19.456"
+        d = "Welcome to the Jungle"
+            
+        print(a.zfill(10)) # <b>0000000025</b>
+        print(b.zfill(10)) # <b>00000Karan</b>
+        print(c.zfill(10)) # <b>000019.456</b>
+        print(d.zfill(10)) # <b>Welcome to the Jungle</b>
+    </pre>  
+</body>
+</html>

@@ -110,8 +110,9 @@ public:
         // Base Condition
         if(position == 1)
         {
-            return curr -> next;
+            Node *temp = curr -> next;
             delete curr;
+            return temp;
         }
 
         // Recursive Call
