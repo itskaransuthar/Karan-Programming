@@ -1,3 +1,5 @@
+// Delete a node in single linked list
+
 /*
 Deletion 
     1. Delete first node
@@ -16,6 +18,7 @@ public:
     Node(int data)
     {
         this -> data = data;
+        next = NULL;
     }
 
     //? Create Linked List

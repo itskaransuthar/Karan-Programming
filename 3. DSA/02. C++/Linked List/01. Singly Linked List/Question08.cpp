@@ -1,3 +1,5 @@
+// Delete without head pointer
+
 #include <iostream>
 using namespace std;
 
