@@ -55,3 +55,19 @@ switch(day)
 }
 // Output: Monday hain jii
 
+/*
+Que: 3. Write a program to find whether a number is divisible by 2 and 3
+*/
+// let num = prompt("Enter a number: ");
+// num = Number.parseInt(num);
+let num = 34;
+
+if(num % 3)
+{
+    console.log("Number is not divisible by 3");
+}
+else 
+{
+    console.log("Number is divisible by 3");
+}
+// Output: Number is not divisible by 3
