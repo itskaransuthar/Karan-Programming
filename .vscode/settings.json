@@ -4,13 +4,15 @@
     ],
     "files.associations": {
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "climits": "cpp"
     },
     "cSpell.words": [
         "Anshu",
         "bhai",
         "Bhaisahab",
         "Bhavika",
+        "Chinki",
         "Ghanshyam",
         "Hain",
         "Ironman",
@@ -19,6 +21,7 @@
         "Lali",
         "Lalita",
         "lexographically",
+        "Pandu",
         "Radha",
         "redeclared",
         "sahab",

@@ -35,7 +35,7 @@ const compare = (a, b) =>
 let arr7 = [551, 22, 3, 14, 5, 6, 8, 7, 229]
 arr7.sort(compare);
 
-console.log(arr7);
+console.log(arr7); // [ 3, 5, 6, 7, 8, 14, 22, 229, 551 ]
 
 let arr8 = [10, 20, 30, 40, 50];
 
