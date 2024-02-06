@@ -42,5 +42,14 @@ class Solution {
 
 int main()
 {
-    
+    vector<int> arr = {4, 5, -8, 7, 1, -8, -2, 0};
+
+    Solution obj;
+    vector<int> ans = obj.makeBeautiful(arr);
+
+    cout << "Beautiful Array: ";
+    for (int i = 0; i < ans.size(); i++)
+    {
+        cout << ans[i] << " ";
+    }
 }
