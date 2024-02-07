@@ -1,60 +1,37 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-# Postfix Evaluation
-class Stack:
+class Queue:
     def __init__(self):
-        self.top = None
-        self.head = None
+        self.queue = [];
     
-    def push(self, data):
-        if self.top is None:
-            self.top = Node(data)
-            self.head = self.top
+    def EnQueue(self, item):
+        self.queue.append(item);
+    
+    def DeQueue(self):
+        if(len(self.queue)):
+            return self.queue.pop(0);
         else:
-            self.top = Node(data)
-            self.top.next = self.head
-            self.head = self.top
-    
-    def pop(self):
-        if self.head is None:
-            return None
-        else:
-            popped = self.head
-            self.head = self.head.next
-            popped.next = None
-            return popped.data
-    
-    def postfixEvaluation(self, str):
-        for i in range(len(str)):
-            if('a' <= str[i] and str[i] <= 'z'):
-                self.push(str[i])
-            
-            else:
-                var1 = self.pop()
-                var2 = self.pop()
+            print("Queue is empty");
+            return -1;
 
-                self.push(var2 + str[i] + var1)
 
-        return self.pop();
+    def isEmpty(self):
+        return len(self.queue) == 0;
 
-'''
-#* Postfix to infix
-a = 'abc++';
-a = 'ab*cdc/a*f+*+';
+    def size(self):
+        return self.length();
 
-s = Stack();
-ans = s.postfixEvaluation(a);
-'''
+    def display(self):
+        print(self.queue);
 
-#* Prefix to infix
-a = '+a*bc'
-a = a[-1::-1];
+obj = Queue();
 
-s = Stack();
-ans = s.postfixEvaluation(a);
-ans = ans[-1::-1];
+obj.EnQueue(45);
+obj.EnQueue(55);
+obj.DeQueue();
+obj.DeQueue();
+obj.EnQueue(10);
+obj.EnQueue(20);
+obj.EnQueue(30);
+obj.EnQueue(40);
+obj.EnQueue(50);
 
-print(ans);
+obj.display();
