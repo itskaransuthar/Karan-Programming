@@ -1,8 +1,8 @@
-# Print alphabets from 'a' to 'z'
+# Print natural numbers in reverse order from 200 to 101
 
-print("\nPrinting Alphabets: ", end = '');
+print("\nNatural numbers in reverse order from 200 to 101: ", end = '');
 
-for ch in range(ord('a'), ord('z') + 1):
-    print(chr(ch), end = " ")
+for i in range(200, 100, -1):
+    print(i, end = " ");
 
 print();

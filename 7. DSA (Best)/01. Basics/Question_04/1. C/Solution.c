@@ -1,4 +1,4 @@
-// Print alphabets from 'a' to 'z'
+// Print alphabets from 'z' to 'a'
 
 #include <stdio.h>
 
@@ -6,7 +6,7 @@ void main()
 {
     printf("\nPrinting Alphabets: ");
 
-    for (char ch = 'a'; ch <= 'z'; ch++)
+    for (char ch = 'z'; ch >= 'a'; ch--)
     {
         printf("%c ", ch);
     }

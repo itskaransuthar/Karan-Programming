@@ -1,10 +1,10 @@
-// Print alphabets from 'a' to 'z'
+// Print natural numbers in reverse order from 200 to 101
 
-process.stdout.write("\nPrinting Alphabets: ");
+process.stdout.write("\nNatural numbers in reverse order from 200 to 101: ");
 
-for (let ch = 'a'.charCodeAt(0); ch <= 'z'.charCodeAt(0); ch++)
+for (let i = 200; i >= 101; i--)
 {
-    process.stdout.write(String.fromCharCode(ch) + " ");
+    process.stdout.write(i + " ");
 }
 
 console.log();

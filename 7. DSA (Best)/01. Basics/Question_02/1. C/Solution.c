@@ -1,15 +1,16 @@
-// Print alphabets from 'a' to 'z'
+// Print natural numbers in reverse order from 200 to 101
 
 #include <stdio.h>
 
 void main()
 {
-    printf("\nPrinting Alphabets: ");
+    printf("\nNatural numbers from 200 to 101: ");
 
-    for (char ch = 'a'; ch <= 'z'; ch++)
+    for (int i = 200; i >= 101; i--)
     {
-        printf("%c ", ch);
+        printf("%d ", i);
     }
 
     printf("\n");
+    // printf("%c", '\n');
 }

@@ -1,12 +1,12 @@
-// Print alphabets from 'a' to 'z'
+// Print natural numbers in reverse order from 200 to 101
 
 class Solution {
     public static void main(String[] args) {
-        System.out.print("\nPrinting Alphabets: ");
+        System.out.print("\nNatural numbers in reverse order from 200 to 101: ");
 
-        for (char ch = 'a'; ch <= 'z'; ch++)
+        for (int i = 200; i >= 101; i--)
         {
-            System.out.print(ch + " ");
+            System.out.print(i + " ");
         }
 
         System.out.println();

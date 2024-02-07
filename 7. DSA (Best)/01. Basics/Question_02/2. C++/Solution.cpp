@@ -1,15 +1,15 @@
-// Print alphabets from 'a' to 'z'
+// Print natural numbers in reverse order from 200 to 101
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout << "\nPrinting Alphabets: ";
+    cout << "\nNatural numbers from 200 to 101: ";
 
-    for (char ch = 'a'; ch <= 'z'; ch++)
+    for (int i = 200; i >= 101; i--)
     {
-        cout << ch << " ";
+        cout << i << " ";
     }
 
     cout << endl;
