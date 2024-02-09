@@ -1,37 +1,53 @@
-class Queue:
-    def __init__(self):
-        self.queue = [];
+class BinaryTree:
+  def __init__(self, size):
+    self.lst = [None] * size
     
-    def EnQueue(self, item):
-        self.queue.append(item);
+  def insertRoot(self, data):
+    if(not self.lst[0]):
+      self.lst[0] = data
+    else:
+      print("Root node is already present")
     
-    def DeQueue(self):
-        if(len(self.queue)):
-            return self.queue.pop(0);
-        else:
-            print("Queue is empty");
-            return -1;
+  def insertLeftChild(self, data, parentIndex):
+    if(self.lst[parentIndex]):
+      if(self.lst[2*parentIndex + 1] != None):
+        print("Left child node is already present")
+      else:
+        self.lst[2*parentIndex + 1] = data
+    else:
+      print("Parent node is absent")
 
+  def insertRightChild(self, data, parentIndex):
+    if(self.lst[parentIndex]):
+      if(self.lst[2*parentIndex + 2] == None):
+        self.lst[2*parentIndex + 2] = data
+      else:
+        print("Right child node is already present")
+    else:
+      print("Parent node is absent")
 
-    def isEmpty(self):
-        return len(self.queue) == 0;
+  def display(self):
+    print(self.lst)
 
-    def size(self):
-        return self.length();
+  def displayTree(self):
+    for i in range(len(self.lst)):
+      if(self.lst[i] == None):
+        print('-', sep=" ", end = " ")
+      else:
+        print(self.lst[i], sep = " ", end = " ")
+    
+    print()
+    
+obj = BinaryTree(7)
 
-    def display(self):
-        print(self.queue);
+obj.displayTree()
 
-obj = Queue();
+obj.insertRoot(1)
 
-obj.EnQueue(45);
-obj.EnQueue(55);
-obj.DeQueue();
-obj.DeQueue();
-obj.EnQueue(10);
-obj.EnQueue(20);
-obj.EnQueue(30);
-obj.EnQueue(40);
-obj.EnQueue(50);
+obj.insertLeftChild(8, 0)
+obj.insertLeftChild(8, 0)
+obj.insertRightChild(9, 0)
+obj.insertRightChild(9, 0)
 
-obj.display();
+# obj.display();
+obj.displayTree()

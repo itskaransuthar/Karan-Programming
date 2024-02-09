@@ -1,23 +1,14 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-
-void fun()
-{
-    cout << "Hello Bachoo" << endl;
-}
-
-void fun1(void (*q)())
-{
-    cout << "Hello Kutto" << endl;
-    q();
-}
 
 int main()
 {
-    void (*p)(); 
-    p = fun;
+    vector<char> v;
 
-    p();
+    v.push_back("1");
 
-    fun1(p);
+
+
+
 }
