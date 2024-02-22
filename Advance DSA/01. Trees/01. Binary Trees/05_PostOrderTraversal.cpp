@@ -4,7 +4,7 @@ using namespace std;
 
 class Node {
     int data;
-    Node * left, * right;
+    Node *left, *right;
 
 public:
     Node (int data)
@@ -13,43 +13,59 @@ public:
         left = right = NULL;
     }
 
+    // Level Order Traversal
     Node * createTree();
     void displayBinaryTree(Node *);
 
-    void inOrderTraversal(Node * temp)
+    void postOrderTraversal(Node * temp)
     {
         if(temp == NULL)
             return;
-
-        inOrderTraversal(temp -> left);
+        
+        postOrderTraversal(temp -> left);
+        postOrderTraversal(temp -> right);
         cout << temp -> data << " ";
-        inOrderTraversal(temp -> right);
+
+        return;
     }
 };
 
 Node * Node :: createTree()
 {
+    queue<Node *> q;
+
     int value;
     cin >> value;
 
-    // Base Condition
-    if(value == -1)
-        return NULL;
-    
-    // Recursion
-    Node * temp = new Node(value);
-    temp -> left = createTree();
-    temp -> right = createTree();
+    Node * root = new Node(value);
+    q.push(root);
 
-    return temp;
+    while(!q.empty())
+    {
+        Node * temp = q.front();
+        q.pop();
+
+        int leftValue, rightValue;
+        cin >> leftValue >> rightValue;
+
+        if(leftValue != -1)
+        {
+            temp -> left = new Node(leftValue);
+            q.push(temp -> left);
+        }
+
+        if(rightValue != -1)
+        {
+            temp -> right = new Node(rightValue);
+            q.push(temp -> right);
+        }
+    }
+
+    return root;
 }
 
-// Level Order Traversal
 void Node :: displayBinaryTree(Node * root)
 {
-    if(root == NULL)
-        return;
-
     queue<Node *> q;
 
     q.push(root);
@@ -61,12 +77,13 @@ void Node :: displayBinaryTree(Node * root)
         q.pop();
 
         cout << temp -> data << " ";
-
+        
         if(temp -> left) q.push(temp -> left);
         if(temp -> right) q.push(temp -> right);
     }
-
+    
     cout << endl;
+    return;
 }
 
 int main()
@@ -76,16 +93,16 @@ int main()
     root = root -> createTree();
     root -> displayBinaryTree(root);
 
-    cout << "InOrder Traversal: ";
-    root -> inOrderTraversal(root);
+    cout << "Post Order Traversal: ";
+    root -> postOrderTraversal(root);
     cout << endl;
 }
 
 /*
 INPUT:
-10 20 40 -1 -1 50 80 -1 110 -1 -1 90 120 -1 -1 -1 30 60 -1 100 -1 -1 70 -1 -1
+10 20 30 40 50 60 70 -1 -1 80 90 -1 100 -1 -1 -1 110 120 -1 -1 -1 -1 -1 -1 -1
 
 OUTPUT:
 Level Order Traversal: 10 20 30 40 50 60 70 80 90 100 110 120 
-InOrder Traversal: 40 20 80 110 50 120 90 10 60 100 30 70
+Post Order Traversal: 40 110 80 120 90 50 20 100 60 70 30 10
 */
