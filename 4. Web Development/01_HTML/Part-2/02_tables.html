@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Karan Suthar">
+    <meta name="description" content="Best guy on earth">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 20px 5px 20px;
+        }
+
+        thead tr th, tfoot > tr > th {
+            text-align: start;
+        }
+
+        table > caption {
+            caption-side: bottom;
+            text-align: start;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Table -->
+    <table>
+        <caption>My First Table</caption>
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>March</td>
+                <td>300</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th>600</th>
+            </tr>
+        </tfoot>
+    </table> 
+</body>
+</html>

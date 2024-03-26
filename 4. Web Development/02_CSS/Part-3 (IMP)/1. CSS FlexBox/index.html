@@ -1,0 +1,46 @@
+<!-- 
+    CSS FlexBox
+    Flexbox is a great way to get more flexibility in your layouts and to simplify responsive layout design. It makes it easy to align elements on a 2D plane and is pretty easy to use once you get familiar with the main properties.
+
+    The first step is to set display: flex on a "container" element. The "children" to the flex container become flex items. A set of properties can be applied to flex containers, and have an effect to all the items as a whole, and a different set of properties can be applied to flex items and have their effect on the targeted items. Flex items can in turn also be flex containers for the elements it contains, making it easy to create complex layouts.
+-->
+
+<!-- 
+    Flex-container Properties: The flex container become flexible by setting the display property to flex:
+        Flex-direction
+        Flex-wrap
+        Flex-flow (Flex-direction + Flex-wrap)
+        Justify-content
+        Align-items
+        Align-content
+        Align-self
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- .container>.box*4{box-$} -->
+    <div class="container">
+        <div class="box"><h1>box-1</h1></div>
+        <div class="box"><h2>box-2</h2></div>
+        <div class="box"><h3>box-3</h3></div>
+        <div class="box"><h4>box-4</h4></div>
+    </div>
+
+    <br/>
+
+    <!-- .container2>.Box*4{box-$} -->
+    <div class="container2">
+        <div class="Box">box-1</div>
+        <div class="Box">box-2</div>
+        <div class="Box">box-3</div>
+        <div class="Box">box-4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- 
+    Because elements can have multiple CSS Selectors, there is a hierarchy for the weight given to each type of selector. Here is the logical order of selectors from least to most weight assigned: 
+        -> Type selector (eg, h1) and pseudo-elements (eg, :before)
+        -> Class selector (eg .example), attributes selector(eg [type = "radio"]) and pseudo-classes(eg, :hover)
+        -> ID Selectors(eg, #example)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: blue;
+        }
+
+        .orange {
+            color: orangered;
+        }
+
+        #green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <p class="orange" id="green" style="color: white; background-color: black;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloremque hic neque quos et aperiam eum porro quis qui fugit iste magni soluta nihil, officiis distinctio, consequatur natus nam optio facere architecto perferendis? Similique non atque minus? Quis consectetur delectus iusto unde nesciunt ea numquam placeat. Dolorem temporibus assumenda ducimus.</p>
+</body>
+</html>

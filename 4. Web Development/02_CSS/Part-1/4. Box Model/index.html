@@ -1,0 +1,62 @@
+<!-- 
+    * BOX MODEL
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .box {
+            height: 200px;
+            width: 400px;
+            /* border: 10px solid white; */
+            background-color: skyblue;
+            box-sizing: border-box;
+
+            /* margin: 10px; */
+
+            /* Text */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        #org {
+            background-color: orange;
+        }
+
+        #wht {
+            background-color: white;
+            /* border: 10px solid darkblue; */
+        }
+
+        #grn {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="org">Saffron</div>
+    <div class="box" id="wht">White</div>
+    <div class="box" id="grn">Green</div>
+</body>
+</html>
+
+<!-- 
+    ? Box Model
+
+    * The box model is the basic building block of CSS
+
+    * According to the box model concept, every element on a page is a rectangular box and many have width, height, padding, borders and margins
+-->

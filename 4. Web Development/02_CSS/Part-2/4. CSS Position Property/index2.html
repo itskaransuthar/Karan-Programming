@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+
+        .wrapper {
+            border: solid;
+            padding: 10px;
+            /* display: inline-block; */
+            display: flex;
+            height: 500px;
+            gap: 10px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            border: solid;
+            position: relative;
+            left: 8px;
+        }
+
+        #box2 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border: solid;
+            position: fixed;
+            left: 100px;
+            top: 100px;
+        }
+
+        #box3 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            border: solid;
+            position: absolute;
+            left: 300px;
+            top: 100px;
+        }
+
+        #box4 {
+            height: 100px;
+            width: 100px;
+            background-color: #00ff00;
+            border: solid;
+            position: sticky;
+            top: 0px;
+        }
+
+        #box5 {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            border: solid;
+            position: relative;
+            left: 100px;
+
+        }
+
+        .Faltu {
+            height: 200px;
+            width: 200px;
+            background-color: gray;
+            position: relative;
+            top: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="box1">Box 1</div>
+        <div id="box2">Box 2</div>
+        <div id="box3">Box 3</div>
+        <div id="box4">Box 4</div>
+        <div id="box5">Box 5</div>
+    </div>
+
+    <div class="Faltu"></div>
+    <div class="Faltu"></div>
+    <div class="Faltu"></div>
+    <div class="Faltu"></div>
+    <div class="Faltu"></div>
+    <div class="Faltu"></div>
+</body>
+</html>

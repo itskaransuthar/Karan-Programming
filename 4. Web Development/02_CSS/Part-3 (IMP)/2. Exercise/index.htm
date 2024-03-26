@@ -1,0 +1,43 @@
+<!-- 
+    Center the box in a box
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            border: solid;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            BOX
+        </div>
+    </div>
+</body>
+</html>

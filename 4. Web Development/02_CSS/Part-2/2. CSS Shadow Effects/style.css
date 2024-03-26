@@ -1,0 +1,77 @@
+h1 {
+    text-shadow: 3px 3px 25px blue;
+    /* text-shadow: 3px 3px 25px blue, 3px 3px 25px red; */
+    /* text-shadow: 20px 2px orange, 2px 20px blue, 20px 20px green; */
+
+    color: darkblue;
+}
+
+.box1 {
+    /* Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+    box-shadow: 20px 20px 10px red, 40px 40px 10px yellow, 60px 60px 10px blue;
+    /* box-shadow: 10px 10px 10px tomato; */
+    margin: 100px 1000px 100px 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.box2 {
+    /* Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+    box-shadow: -20px -20px 10px red, -40px -40px 10px yellow, -60px -60px 10px blue;
+    /* box-shadow: 10px 10px 10px tomato; */
+    margin: 200px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.box3 {
+    /* Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+    box-shadow: 20px -20px 10px red, 40px -40px 10px yellow, 60px -60px 10px blue;
+    /* box-shadow: 10px 10px 10px tomato; */
+    margin: 200px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.box4 {
+    /* Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+    box-shadow: -20px 20px 10px red, -40px 40px 10px yellow, -60px 60px 10px blue;
+    /* box-shadow: 10px 10px 10px tomato; */
+    margin: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.box5 {
+    /* Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+    box-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+    /* box-shadow: 10px 10px 10px tomato; */
+    margin: 200px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+}

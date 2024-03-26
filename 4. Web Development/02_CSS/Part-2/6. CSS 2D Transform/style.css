@@ -1,0 +1,46 @@
+.box {
+    background-color: aqua;
+    /*transform: translate(100px, 20px);
+    */transform: translateX(100px);
+    transform: translateY(20px);
+    /*display: inline;
+    */-webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+}
+
+.box2 {
+    background-color: red;
+    transform: rotate(-30deg);
+    margin: 30px;
+
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+}
+
+.box3 {
+    background-color: blue;
+    transform: scale(1, 4);
+
+    -webkit-transform: scale(1, 4);
+    -moz-transform: scale(1, 4);
+    -ms-transform: scale(1, 4);
+    -o-transform: scale(1, 4);
+}
+
+.box4 {
+    margin: 200px;
+    background-color: black;
+    color: white;
+    /*transform: scale(2,2);
+    */transform: skew(45deg);
+    
+    -webkit-transform: skew(45deg);
+    -moz-transform: skew(45deg);
+    -ms-transform: skew(45deg);
+    -o-transform: skew(45deg);
+}

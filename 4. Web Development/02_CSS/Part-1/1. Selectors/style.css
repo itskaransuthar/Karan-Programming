@@ -1,0 +1,42 @@
+p {
+    color: red;
+    font-size: larger;
+}
+
+h1 {
+    background-color: aqua;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.big {
+    font-size: larger;
+    background-color: white;
+}
+
+.small {
+    font-size: smaller;
+    background-color: white;
+}
+
+#firstButton {
+    color: brown;
+    font-size: larger;
+    /* background-color: aqua; */
+    border: none;
+}
+
+button:hover {
+    background-color: yellow;
+}
+
+#codehelp:hover {
+    color: red;
+    text-decoration: none;
+}

@@ -1,0 +1,24 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: solid;
+    margin: 10px 0px 10px 0px;
+}
+
+.translated {
+    transform: perspective(20px) translateZ(-10px);
+    -webkit-transform: perspective(20px) translateZ(-10px);
+    -moz-transform: perspective(20px) translateZ(-10px);
+    -ms-transform: perspective(20px) translateZ(-10px);
+    -o-transform: perspective(20px) translateZ(-10px);
+}
+
+.scaled {
+    transform: perspective(30px) scaleZ(2) rotateX(3deg) rotateY(-3deg);
+    -webkit-transform: perspective(30px) scaleZ(2) rotateX(3deg) rotateY(-3deg);
+    -moz-transform: perspective(30px) scaleZ(2) rotateX(3deg) rotateY(-3deg);
+    -ms-transform: perspective(30px) scaleZ(2) rotateX(3deg) rotateY(-3deg);
+    -o-transform: perspective(30px) scaleZ(2) rotateX(3deg) rotateY(-3deg);
+}
+

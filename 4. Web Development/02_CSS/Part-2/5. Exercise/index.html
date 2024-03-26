@@ -1,0 +1,61 @@
+<!-- 
+    ! HomeWork: Position text in all corners and center of an image
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            border: solid;
+            position: relative;
+        }
+
+        #box1 {
+            position: absolute;
+        }
+
+        #box2 {
+            position: absolute;
+            left: 147px;
+        }
+
+        #box3 {
+            position: absolute;
+            left: 147px;
+            top: 184px;
+        }
+
+        #box4 {
+            position: relative;
+            top: 185px;
+        }
+
+        #box5 {
+            position: absolute;
+            top: 90px;
+            left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="box1">HELLO</div>
+        <div id="box2">HELLO</div>
+        <div id="box3">HELLO</div>
+        <div id="box4">HELLO</div>
+        <div id="box5">HELLO</div>
+    </div>
+</body>
+</html>

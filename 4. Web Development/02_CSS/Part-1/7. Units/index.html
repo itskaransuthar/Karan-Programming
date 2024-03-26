@@ -1,0 +1,78 @@
+<!-- 
+    Units in CSS
+        1. Absolute Unit (mm, cm, in, px)
+        2. Percentage Unit (%)
+        3. Relative Unit (em, rem)
+            3.1 Relative to font size
+            3.2 Related to Document
+
+    1 px = 1 / 96 inch
+    1 em = 1 * parent font size
+    1 rem = 1 * root font size
+    1 vw = 1 / 100 viewport width
+    1 vh = 1 / 100 viewport height
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            height: 100px;
+            width: 400px;
+            background-color: black;
+            border: 5px red solid;
+        }
+
+        #div2 {
+            height: 100px;
+            width: 400px;
+            background-color: black;
+            border: 5px #00ff00 solid;
+        }
+
+        #div3 {
+            height: 100px;
+            width: 400px;
+            background-color: black;
+            border: 5px blue solid;
+        }
+
+        div
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+
+        #innerDiv1 {
+            width: 50px;
+        }
+
+        #innerDiv2 {
+            width: 50%;
+        }
+
+        #innerDiv3 {
+            width: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="innerDiv1" style="color: white;">Box 1</div>
+    </div>
+
+    <div id="div2">
+        <div id="innerDiv2" style="color: white;">Box 2</div>
+    </div>
+
+    <div id="div3">
+        <div id="innerDiv3" style="color: white;">Box 3</div>
+    </div>
+</body>
+</html>
